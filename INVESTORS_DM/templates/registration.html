@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration Details</h5>
+                <form class="btn btn-secondary" name="registration" method="POST" action="/" >
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">First Name</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="firstname" placeholder="Enter Firstname" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Last Name</label>
+                      <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Enter lastname" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom03">Phone Number</label>
+                      <input type="tel" class="form-control" id="validationCustom03" name="phone" placeholder="Your mobile number" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom04">Email Address</label>
+                      <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="Enter your email address" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom05">Username</label>
+                      <input type="text" class="form-control" id="validationCustom05" name="username" placeholder="Your Username" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom06">Password</label>
+                      <input type="password" class="form-control" id="validationCustom06" name="password" placeholder="Enter your Password" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div><br><br><hr>
+                    <div class="form-row" align="center">
+                        <div class="col-md-6 mb-6">
+                            <label for="validationCustom07">Confirm Password</label>
+                            <input type="password" class="form-control" id="validationCustom07" name="confpassword" placeholder="Confirm your Password" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                <br><br>
+                <center><input type="submit" name="submit" class="btn btn-success col-md-6" value="Register"></center><br>
+        </form>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                    <br><br>
+                    <a href="login"><input type="button" value="Click Here To Login" class="btn btn-secondary col-md-4"></a><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}
+
+</body>
+</html>

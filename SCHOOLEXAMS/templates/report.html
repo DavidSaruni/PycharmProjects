@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Report</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js.boot.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+               <h5><b>Student Report</b></h5>
+                <form action="/search2" method="post" enctype="multipart/form-data">
+                <input type="number" name="admission"  placeholder="search student">
+                <input type="submit" value="search" name="search2">
+            </form>
+                <form class="btn btn-info" name="report" method="post" action="/" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="form-row">
+                                <hr>
+                                <center>
+                                <img src="../static/uploads/{% for item in data %}{{ item[9] }}{% endfor %}" alt="">
+                                </center>
+                                <br>
+                                <hr>
+                            </div>
+                        <div class="form-row">
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom01">Fullname</label>
+                            <input type="text" class="form-control" value="{% for item in data %}{{ item[0] }}{% endfor %}" id="validationCustom01" name="fullname" placeholder="Enter fullname" required readonly>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom02">Class</label>
+                            <input type="text" class="form-control" value="{% for item in data %}{{ item[1] }}{% endfor %}" id="validationCustom02" name="standard" placeholder="Enter your class" required readonly>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom01">Admission Number</label>
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[2] }}{% endfor %}" id="validationCustom03" name="admission" placeholder="Enter your Admission number" required readonly>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom02">Gender</label>
+                            <input type="text" class="form-control" value="{% for item in data %}{{ item[3] }}{% endfor %}" id="validationCustom04" name="gender" placeholder="Enter your gender" required readonly>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    </fieldset>
+                    <br>
+                        <hr>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mathematics:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[4] }}{% endfor %}" name="mathematics" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">English:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[5] }}{% endfor %}" name="english" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Kiswahili:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[6] }}{% endfor %}" name="kiswahili" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Science:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[7] }}{% endfor %}" name="science" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">SST&CRE:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" value="{% for item in data %}{{ item[8] }}{% endfor %}" name="social" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

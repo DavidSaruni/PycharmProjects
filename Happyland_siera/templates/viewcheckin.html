@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viewcheckin</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css">
+        body{
+              background-color: grey;
+
+        }
+        table{
+            text-color: #DF01D7;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+<div class="container-fluid">
+    <h4 class="text-danger">{{ msg }}</h4>
+  <table border="4" class="container">
+        <thead>
+        <tr>
+            <th scope="col">fullname</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">nationality</th>
+            <th scope="col">address</th>
+            <th scope="col">checkin_date</th>
+            <th scope="col">checkin_time</th>
+            <th scope="col">roomno</th>
+            <th scope="col">checkout_date</th>
+            <th scope="col">checkout_time</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in rows%}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+            <td>{{ row[8] }}</td>
+            <td>{{ row[9] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+  </table>
+</div>
+<br><br>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css">
+    img{
+         border-radius: 500px;
+         width: 300px;
+         height:300px;
+         border:4
+        }
+   form{
+         alignment: center;
+        }
+
+    </style>
+
+</head>
+<body>
+{% include "header.html" %}
+<center>
+    <div class="row">
+        <div class="col-md-6">
+
+
+        </div>
+
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Marks Entry</h3>
+                 <form action="/search" method="post" enctype="multipart/form-data">
+                <input type="number" name="admission"  placeholder="search student">
+                <input type="submit" value="search" name="search">
+            </form>
+
+                <form class="btn btn-info" method="post" action="/Calculation">
+                    <fieldset>
+                            <div class="form-row">
+                                <hr>
+
+                                <center>
+                                <img src="../static/uploads/{% for item in data %}{{ item[9] }}{% endfor %}" alt="" name="filename">
+                                </center>
+                                <br>
+                                <hr>
+                            </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-2">
+                                <label for="">Fullname</label>
+                                <input type="text" class="form-control" id="" name="fullname"  value="{% for item in data %}{{ item[1] }}{% endfor %}" placeholder="Enter fullname" required readonly>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <label for="">Class</label>
+                                <input type="text" class="form-control" id="" name="standard"  value="{% for item in data %}{{ item[4] }}{% endfor %}" placeholder="Enter class" required readonly>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-2">
+                                <label for="validationCustom03">Admission Number</label>
+                                <input type="text" class="form-control" id="validationCustom03" name="admission"  value="{% for item in data %}{{ item[0] }}{% endfor %}" placeholder="Enter your Admission number" required readonly>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                                <label for="">Gender</label>
+                                <input type="text" class="form-control" id="" name="gender"  value="{% for item in data %}{{ item[6] }}{% endfor %}" placeholder="Enter fullname" required readonly>
+                                <div class="valid-feedback">Looks good!</div>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Mathematics:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="mathematics" placeholder="Maths score">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">English:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="english" placeholder="Eng score">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Kiswahili:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="kiswahili" placeholder="Kisw score">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Science:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="science" placeholder="Sci score">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">SST&CRE:</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" name="social" placeholder="SST&CRE score">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+<!--                 <label><b>TOTAL {{ marks }}</b></label>&ndash;&gt;-->
+             <center><input type="submit" name="submit" class="btn btn-success col-md-6" value="submit"></center><hr>
+                <br>
+     </form>
+
+            </div>
+        </div>
+    </div>
+
+
+     <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Entry Status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+{% include "footer.html" %}
+</body>
+</html>

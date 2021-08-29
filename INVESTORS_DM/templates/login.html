@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card body">
+               <h5 class="card-title">Login Details</h5>
+                <form class="btn btn-primary" method="post" action="/login">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-1">
+                            <label ><b>Username</b></label>
+                            <input type="text" class="form-control" name="username" placeholder="Enter your username" required>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-1">
+                            <label><b>Password</b></label>
+                            <input type="password" class="form-control" name="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" name="login" class="btn btn-secondary col-md-4" value="Log In">
+                    <br>
+                    <center>
+                        <p>Doesn't have an account?</p>
+                    </center>
+                    <center>
+                        <a href="registration"><input type="button" value="Register here" class="btn btn-danger col-md-2"></a><br><br>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5>Login Status</h5>
+                <div class="alert alert-info">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+</body>
+</html>

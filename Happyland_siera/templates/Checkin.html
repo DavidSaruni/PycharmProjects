@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckIn Page</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css">
+        body{
+             background-color: grey;
+             color: yellow;
+             background-image: url(../static/images/hp2.jpg)
+        }
+    </style>
+</head>
+<body>
+{% include "header.html" %}
+<h4>{{ msg }}</h4>
+    <center>
+        <h2>CheCk In Page</h2>
+    </center>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Check In Details</h5>
+                <form method="post" action="/checkin" class="card bg-success">
+            <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Full Names</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="fullname" placeholder="Your full names" required>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Email Address</label>
+                      <input type="email" class="form-control" id="validationCustom02" name="email" placeholder="Enter your email address" required>
+                    </div>
+                </div>
+
+            <hr>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom03">Phone Number</label>
+                      <input type="tel" class="form-control" id="validationCustom03" name="phone" placeholder="Your mobile number" required>
+                    </div>
+                <br><br>
+                <div class="col-md-6 mb-2">
+                      <label for="validationCustom04">Nationality</label>
+                      <input type="text" class="form-control" id="validationCustom04" name="nationality" placeholder="Your nationality" required>
+                    </div>
+                </div>
+
+            <hr>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom05">Address</label>
+                      <input type="text" class="form-control" id="validationCustom05" name="address" placeholder="Your address" required>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom06">Checkin Date</label>
+                      <input type="date" class="form-control" id="validationCustom06" name="checkin_date" placeholder="checkin_date" required>
+                    </div>
+                </div>
+
+            <hr>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom07">Checkin Time</label>
+                      <input type="time" class="form-control" id="validationCustom07" name="checkin_time" placeholder="checkin_time" required>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom08">Room Number</label>
+                      <input type="number" class="form-control" id="validationCustom08" name="roomno" placeholder="room number" required>
+                    </div>
+                </div>
+
+            <hr>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom09">Checkout Date</label>
+                      <input type="date" class="form-control" id="validationCustom09" name="checkout_date" placeholder="checkou_date" required>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom010">Checkout Time</label>
+                      <input type="time" class="form-control" id="validationCustom010" name="checkout_time" placeholder="checkout_time" required>
+                    </div>
+                </div>
+                <br>
+            <hr>
+                <center><input type="submit" name="submit" class="btn btn-info col-md-6" value="Submit"></center>
+        </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Check In Status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css">
+		form{
+			display: #2E2E2E;
+			background-color: ;
+		}
+		marquee{
+		    color: pink;
+		    font-size: 36px;
+		}
+		body{
+		    background-color: #58FAAC;
+		    background-image: url(../static/images/hp2.jpg)
+		}
+	</style>
+</head>
+<body>
+{% include "header.html" %}
+<h2><marquee><i>Welcome to Real Estate</i></marquee></h2>
+ <div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration Details</h5>
+                <form class="btn btn-info" method="post" action="/">
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">ID Number</label>
+                      <input type="number" class="form-control" id="validationCustom01" name="id_number" placeholder="Enter your ID number" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Username</label>
+                      <input type="text" class="form-control" id="validationCustom02" name="username" placeholder="Enter username" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Password</label>
+                      <input type="password" class="form-control" id="validationCustom03" name="password" placeholder="Enter your Password" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Email Address</label>
+                      <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="Enter your email address" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Location</label>
+                      <input type="text" class="form-control" id="validationCustom05" name="location" placeholder="Your location" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Phone Number</label>
+                      <input type="tel" class="form-control" id="validationCustom06" name="phone" placeholder="Your mobile number" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <center><input type="submit" name="submit" class="btn btn-success col-md-6" value="Submit"></center>
+            <div>
+     <h3 style="color: purple;"><a href="/login">Click here to Login</a></h3>
+                </div>
+        </form>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}
+</body>
+</html>
